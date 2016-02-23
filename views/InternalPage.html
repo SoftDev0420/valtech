@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />	
+	<title>valtech_</title>
+
+	<link rel="stylesheet" href="../css/internalpage.css"></link>
+	<link rel="stylesheet" href="../css/common.css">
+
+	<script src="../lib/jquery/1.9.1/jquery-1.9.1.js"></script>
+	<script src="../js/string.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		// Hammer.plugins.fakeMultitouch();
+		var itemIndex;
+
+		$(document).on('click', '.next-button', function() {
+			// var itemIndex = Math.floor(Math.random() * 16);
+			window.location = "EnterPage.html?itemIndex=" + itemIndex;
+		});
+
+		function onLoad() {
+			itemIndex = parse("itemIndex");
+
+			var mainDiv = document.getElementsByClassName('internal-background')[0];
+			if (itemIndex < 12) {
+				mainDiv.style.backgroundImage = "url(../res/images/InternalPage/backgrounds/background" + Math.floor(parseInt(itemIndex) / 4) + ".png)";
+			}
+			else {
+				mainDiv.style.backgroundImage = "url(../res/images/InternalPage/backgrounds/background3" + parseInt(itemIndex) % 4 + ".png)";	
+			}
+
+			var itemImage = document.getElementById('ItemImage');
+			itemImage.src = "../res/images/InternalPage/items/item" + itemIndex + ".png";
+
+			var cardImage = document.getElementById('CardImage');
+			cardImage.src = "../res/images/InternalPage/cards/card" + Math.floor(parseInt(itemIndex) / 4) + ".png";
+
+			document.getElementById("MainTitle").innerHTML = mainTitles[itemIndex];
+			document.getElementById("ItemTitle").innerHTML = itemTitles[itemIndex];
+			document.getElementById("ItemDescription").innerHTML = itemDescriptions[itemIndex];
+			document.getElementById("ItemDescription").innerHTML = itemDescriptions[itemIndex];
+			document.getElementById("CardName").innerHTML = cardNames[Math.floor(parseInt(itemIndex) / 4)];
+			document.getElementById("CardTip").innerHTML = cardTips[itemIndex];
+		}
+		
+	</script>
+
+</head>
+<body onLoad="javascript:onLoad()">
+	<div id="MainDiv" style="background-image: url(../res/images/background.png)" class="internal-background">
+		<h2 class="base-text">
+			Based on your selections,<br>we think that you would enjoy dining at the
+		</h2>
+		<h1 id="MainTitle" class="main-title">
+		</h1>
+		<div class="content">
+			<div>
+				<img id="ItemImage" class="item-image">
+				<div class="item-title-wrapper">
+					<h1 id="ItemTitle" class="item-title"></h1>
+				</div>
+				<h5 id="ItemDescription" class="item-description"></h5>
+			</div>
+			<div>				
+				<img id="CardImage" class="card-image">
+				<div class="card-div">
+					<h5 id="PostText1" class="post-text1">
+						Enter this raffle to win a
+					</h5>
+					<h1 id="CardName" class="post-text2"></h1>
+					<h5 id="CardTip" class="post-text3"></h5>
+				</div>
+			</div>
+		</div>
+		<a class='next-button'>LET'S DO THIS!</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />	
+	<title>valtech_</title>
+	<script src="../lib/jquery/1.9.1/jquery-1.9.1.js"></script>
+
+	<script src="../lib/hammer/hammer.min.js"></script>
+	<script src="../lib/hammer/hammer.fakemultitouch.js"></script>
+
+	<link rel="stylesheet" href="../lib/drum/drum.css"></link>
+	<script src="../lib/drum/drum.js"></script>
+
+	<link rel="stylesheet" href="../css/selectionpage.css"></link>
+	<link rel="stylesheet" href="../css/common.css">
+
+	<script>
+		Hammer.plugins.fakeMultitouch();
+		$(document).ready(function () {
+			$("#DO").drum({ panelCount: 15, dail_w: 35, dail_h: 10, dail_stroke_width: 0});
+			$("#INDOORS").drum({ panelCount: 15, dail_w: 35, dail_h: 10, dail_stroke_width: 0});
+			$("#ACTIONS").drum({ panelCount: 15, dail_w: 35, dail_h: 10, dail_stroke_width: 0 });
+		});
+
+		$(document).on('click', '.go-button', function() {
+			var itemIndex;
+			var DO = document.getElementById("DO");
+			var INDOORS = document.getElementById("INDOORS");
+			var ACTIONS = document.getElementById("ACTIONS");
+			var actionsIndex;
+			if (ACTIONS.selectedIndex == 3)
+				actionsIndex = 0;
+			else
+				actionsIndex = ACTIONS.selectedIndex + 1;
+			itemIndex = (1 - DO.selectedIndex) * 8 + (1- INDOORS.selectedIndex) * 4 + actionsIndex;
+			window.location = 'InternalPage.html?itemIndex=' + itemIndex;
+		});
+
+		$(document).on('click', '.feeling-button', function() {
+			var itemIndex = Math.floor(Math.random() * 16);
+			window.location = 'InternalPage.html?itemIndex=' + itemIndex;
+		});
+	</script>
+</head>
+<body>
+	<div style="background-image: url(../res/images/background.png)" class="picker-background">
+		<a class='button go-button'>GO</a>
+		<a class='button feeling-button'>FEELING LUCKY</a>
+	</div>
+	<div class="outside">
+	<select id="DO" class="drum" name="do">
+		<option value="Do">Get pumped</option>
+		<option value="Watch">Relax and chill</option>
+	</select>
+</div>
+<div class="outside">
+	<select id="INDOORS" class="drum" name="indoors">
+		<option value="Indoors">Indoors</option>
+		<option value="Outdoors">Outdoors</option>
+	</select>
+</div>
+<div class="outside">
+	<select id="ACTIONS" class="drum" name="actions">
+		<option value="Drinking">Drinking</option>
+		<option value="Eating">Eating</option>
+		<option value="Spending">Spending Money</option>
+		<option value="Adrenaline">Adrenaline</option>
+	</select>
+</div>
+<div class=	"line line-top"></div>
+<div class=	"line line-bottom"></div>
+</body>
+</html>

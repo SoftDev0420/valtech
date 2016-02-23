@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />	
+	<title>valtech_</title>
+
+	<link rel="stylesheet" href="../css/enterpage.css"></link>
+	<link rel="stylesheet" href="../css/common.css"></link>
+	<link rel="stylesheet" href="../css/check-box.css"></link>
+
+
+	<script src="../lib/jquery/1.9.1/jquery-1.9.1.js"></script>
+	<script src="../js/string.js"></script>
+	<script src="../js/common.js"></script>
+	<script>
+		// Hammer.plugins.fakeMultitouch();
+		var itemIndex;
+		function onLoad() {
+			itemIndex = parse("itemIndex");
+		}
+
+		$(document).on('click', '.send-button', function() {
+			var itemIndex = Math.floor(Math.random() * 16);
+			window.location = "EndPage.html";
+		});
+
+		function checkGender(checkbox) {
+			var maleCheckbox = document.getElementById('male');
+			var femaleCheckbox = document.getElementById('female');
+			if (checkbox.id == "male") {
+				maleCheckbox.checked = true;
+				femaleCheckbox.checked = false;
+			}
+			else {
+				femaleCheckbox.checked = true;
+				maleCheckbox.checked = false;
+			}
+
+		}
+	</script>
+
+</head>
+<body onLoad="javascript:onLoad()">
+	<div id="MainDiv" style="background-image: url(../res/images/background.png)" class="internal-background">
+		<h2 class="enter-text">
+			Enter to win
+		</h2>
+		<div id="Content" class="content">
+			<div id="personalInfo" class="personal-info">
+				<input type="text" name="firstName" placeholder="First Name" class="input-item round-border">
+				<input type="text" name="lastName" placeholder="Last Name" class="input-item round-border">
+				<input type="text" name="company" placeholder="Company" class="input-item round-border">
+				<input type="text" name="jobTitle" placeholder="Job Title" class="input-item round-border">
+				<input type="text" name="email" placeholder="Email" class="input-item round-border">
+				<input type="text" name="phoneNumber" placeholder="Phone Number" class="input-item round-border">
+			</div>
+			<div class="gender-div">
+				<h5 class="gender">Gender</h5>
+
+				<div class="checkbox check-div">
+					<input id="male" type="checkbox" name="check" value="Male" class="gender-checkbox" onclick='checkGender(this);'>
+					<label for="male" class="gender-text">Male</label>
+					<input id="female" type="checkbox" name="check" value="Female" class="gender-checkbox" onclick='checkGender(this);'>
+					<label for="female" class="gender-text">Female</label>
+				</div>
+			</div>
+		</div>
+		<a class="send-button round-border">SEND</a>
+	</div>
+</body>
+</html>

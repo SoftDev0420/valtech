@@ -1,0 +1,117 @@
+html, body {
+	position: relative;
+    height: 100%;
+	font-family: arial,verdana,sans-serif;
+}
+
+.dial {
+	background-color: rgba(190, 190, 190, 0.0) !important; 
+}
+
+.picker-background {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+}
+
+div.inside, div.outside {
+	float: left;
+}
+
+div.drum-wrapper {
+	margin-right: 20px;
+	
+}
+
+
+#drum_DO {
+	position: absolute;
+	top: 42%;
+	left: 21%;
+	width: 21%;
+}
+#drum_DO figure {
+	text-align: center;
+	font-size: 1.6em;	
+	line-height: 1.6em;
+	color: white;
+}
+
+#drum_DO .container, #drum_DO figure {
+	height: 40px;
+}
+
+#drum_INDOORS {
+	position: absolute;
+	top: 42%;
+	left: 42.5%;
+	width: 12%;
+}
+
+#drum_INDOORS figure {
+	text-align: center;
+	font-size: 1.6em;
+	line-height: 1.6em;
+	color: white;
+}
+
+#drum_INDOORS .container, #drum_INDOORS figure {
+	height: 40px;
+}
+
+#drum_ACTIONS {
+	position: absolute;
+	top: 42%;
+	left: 58%;
+	width: 20%;
+}
+
+#drum_ACTIONS, #drum_ACTIONS .inner {
+	height: 190px;
+}
+#drum_ACTIONS .container, #drum_ACTIONS figure {
+	height: 40px;
+}
+#drum_ACTIONS figure {
+	text-align: left;
+	font-size: 1.6em;
+	line-height: 1.6em;
+	color: white;
+}
+
+.line {
+	position: absolute;
+	left: 21%;
+	width: 57%;
+	height: 1px;
+	background-color: rgb(205, 205, 205);
+}
+.line-top {
+	top: 49%;
+}
+.line-bottom {
+	top: 54%;
+}
+
+.button {
+	color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 78.3%;
+    border: 2px;
+    border-color: white;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.go-button {
+	left: 28.3%;
+	padding: 1% 9%;	
+}
+
+.feeling-button {
+	left: 52%;
+	padding: 1% 4%;
+}

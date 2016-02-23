@@ -1,0 +1,131 @@
+@font-face { font-family: Cheddar; src: url('Fonts/Cheddar Jack.TTF'); } 
+@font-face { font-family: HelveticaBd; src: url('Fonts/HelveticaNeueLTStd/HelveticaNeueLTStd-Bd.otf'); } 
+@font-face { font-family: HelveticaRoman; src: url('Fonts/HelveticaNeueLTStd/HelveticaNeueLTStd-Roman.otf'); } 
+
+html, body {
+	position: relative;
+    height: 100%;
+}
+
+.base-text {
+    position: relative;
+    margin: 9% 0 0 0;
+    font-family: HelveticaBd;
+	color: white;
+}
+
+.main-title {
+    position: relative;
+    margin: 4% 0 0 0;
+    font-family: Cheddar;
+    font-size: 4.5em;
+    color: white;
+    font-weight: normal;
+}
+
+.internal-background {
+    background-size: cover;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.content {
+    width: 80%;
+    display: inline-block;
+}
+
+.content > div {
+    width: 50%;
+    float: left;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 10%;
+}
+
+.content > div:first-child {
+    padding: 0 6%;
+}
+
+.item-image {
+    width: 100%;
+    background-size: cover;
+    margin-top: 10%;
+}
+
+.item-title-wrapper {
+    position: relative;
+    height: 70px;
+    white-space: nowrap;
+}
+
+.item-title {
+    color: white;
+    margin: 0;
+    text-align: left;
+    font-family: HelveticaBd;
+    font-size: 2em;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+.item-description {
+    text-align: left;
+    color: white;
+    margin: 0;
+    font-family: HelveticaRoman;
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+.card-image {
+    width: 100%;
+    background-size: cover;
+    margin: 22% 0 11%;
+}
+
+.card-div {
+    width: 100%;
+    margin: auto;
+    white-space: nowrap;
+}
+.post-text1 {
+    color: white;
+    font-size: 1.1em;
+    margin: 0;
+    font-family: HelveticaRoman;
+    text-align: left;
+}
+.post-text2 {
+    color: white;
+    font-size: 1.6em;
+    margin: 0;
+    font-family: HelveticaBd;
+    text-align: left;
+}
+.post-text3 {
+    text-align: left;
+    color: white;
+    margin: 0;
+    font-family: HelveticaRoman;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+.next-button {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 82.5%;
+    border: 2px;
+    border-color: white;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 1% 11%;
+    left: 50%;
+    transform: translateX(-50%);
+}

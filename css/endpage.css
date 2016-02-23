@@ -1,0 +1,49 @@
+@font-face { font-family: Cheddar; src: url('Fonts/Cheddar Jack.TTF'); } 
+@font-face { font-family: HelveticaBd; src: url('Fonts/HelveticaNeueLTStd/HelveticaNeueLTStd-Bd.otf'); } 
+@font-face { font-family: HelveticaRoman; src: url('Fonts/HelveticaNeueLTStd/HelveticaNeueLTStd-Roman.otf'); } 
+
+html, body {
+	position: relative;
+    height: 100%;
+}
+.internal-background {
+    background-size: cover;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.logo-title {
+    margin-top: 16.5%;
+    color: white;
+    font-size: 2.6em;
+}
+
+.thank-text {
+    margin-top: 10%;
+    color: white;
+    font-family: Cheddar;
+    font-size: 7.8em;
+    font-weight: normal;
+}
+
+.result-text {
+    color: white;
+    margin-top: 5%;
+    font-family: HelveticaRoman;
+    font-size: 1.2em;
+}
+
+.next-button {
+    color: white;
+    background: #23b300;
+    text-decoration: none;
+    position: absolute;
+    top: 81.5%;
+    padding: 1% 5.5%;
+    left: 50%;
+    transform: translateX(-50%);
+}

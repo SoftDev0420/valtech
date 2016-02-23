@@ -1,0 +1,13 @@
+.start-button{
+	color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 83.6%;
+    border: 2px;
+    border-color: white;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 1% 9%;
+    left: 50%;
+    transform: translateX(-50%);
+}
